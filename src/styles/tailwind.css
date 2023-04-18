@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .box-gradient {
+    @apply bg-gradient-to-l from-[#e4f2fe] to-[#ffeefe] dark:from-[#3c3e56] dark:to-[#07102d];
+  }
+
+  .box-screen {
+    @apply w-full sm:max-w-[540px] md:max-w-[768px] lg:max-w-[992px] xl:max-w-[1140px] 2xl:max-w-[1320px] p-4 lg:p-8 m-auto;
+  }
+
+  .text-main {
+    @apply text-dark dark:text-white;
+  }
+
+  .btn {
+    @apply bg-primary rounded-xl py-4 px-10 text-base font-bold text-white transition-all hover:shadow-[0_11px_20px_rgba(139,92,246,0.2)] cursor-pointer;
+  }
+}
