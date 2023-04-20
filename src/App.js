@@ -7,6 +7,7 @@ import Features from './views/Features';
 import Feedback from './views/Feedback';
 import Hero from './views/Hero';
 import HowWorks from './views/HowWorks';
+import Partner from './views/Partner';
 import Pricing from './views/Pricing';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
 			<Feedback/>
 			<FAQ/>
 			<Blog/>
+			<Partner/>
 		</div>
 	);
 }
