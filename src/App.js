@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar';
 import About from './views/About';
 import Download from './views/Download';
+import FAQ from './views/FAQ';
 import Features from './views/Features';
 import Feedback from './views/Feedback';
 import Hero from './views/Hero';
@@ -18,6 +19,7 @@ function App() {
 			<Download/>
 			<Pricing/>
 			<Feedback/>
+			<FAQ/>
 		</div>
 	);
 }
