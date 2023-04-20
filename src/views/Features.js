@@ -1,5 +1,6 @@
 import React from 'react';
 import {FaStar, FaArrowRight, FaTrophy} from 'react-icons/fa';
+import Heading from '../components/Heading';
 
 export default function Features() {
 	return (
@@ -8,13 +9,7 @@ export default function Features() {
 				<div className=' flex px-4 justify-center'>
 					<div className=' px-4'>
 						<div className=' text-center mx-auto mb-16 max-w-[510px]'>
-							<div className='-mx-4'>
-								<h2 className=' text-main font-bold font-khand text-3xl sm:text-5xl mb-5'>Our Recent Awards</h2>
-								<p className='text-grey text-xl'>
-									There are many variations of passages of Lorem Ipsum available but the majority have suffered
-									alteration in some form.
-								</p>
-							</div>
+							<Heading title={'Our Recent Awards'}/>
 						</div>
 					</div>
 				</div>

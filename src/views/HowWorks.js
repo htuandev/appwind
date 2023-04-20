@@ -1,21 +1,16 @@
 import React from 'react';
 import {FaDownload, FaUser, FaGrinHearts} from 'react-icons/fa';
+import Heading from '../components/Heading';
 
 export default function HowWorks() {
 	return (
 		<section id='how-work'>
 			<div className=' box-screen mt-24'>
-				<div className=' text-center  mb-16 max-w-[500px] mx-auto'>
-					<h2 className='  text-main font-bold font-khand text-3xl sm:text-5xl mb-5'>How it Works?</h2>
-					<p className=' text-grey'>
-						There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in
-						some form.
-					</p>
-				</div>
+				<Heading title={'How it Works?'} />
 				<div className='flex flex-wrap justify-center'>
-					<Box type={1} title='Download For Free'/>
-					<Box type={2} title='Open an Account'/>
-					<Box type={3} title='Enjoy our App'/>
+					<Box type={1} title='Download For Free' />
+					<Box type={2} title='Open an Account' />
+					<Box type={3} title='Enjoy our App' />
 				</div>
 			</div>
 		</section>
