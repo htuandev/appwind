@@ -1,9 +1,12 @@
 import React from 'react';
 import {FaPlay} from 'react-icons/fa';
+import ScrollUp from '../components/ScrollUp';
+import { useWasViewed } from '../hooks/useWasViewed';
 export default function Hero() {
+	const {setRef, isInView } = useWasViewed();
 	return (
 		<section id='hero'>
-			<div className=' box-gradient py-4 md:py-8 xl:py-16 rounded-2xl mx-4 md:mx-8 2xl:mx-14 lg:pl-10 overflow-hidden px-4'>
+			<div className=' box-gradient py-4 md:py-8 xl:py-16 rounded-2xl mx-4 md:mx-8 2xl:mx-14 lg:pl-10 overflow-hidden px-4' ref={setRef}>
 				<div className=' box-screen'>
 					<div className=' flex flex-wrap items-center -mx-4 gap-y-12'>
 						<div className=' w-full lg:w-1/2 px-4'>
@@ -35,6 +38,7 @@ export default function Hero() {
 					</div>
 				</div>
 			</div>
+			<ScrollUp visible={!isInView} />
 		</section>
 	);
 }
