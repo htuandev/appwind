@@ -1,3 +1,4 @@
+import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import About from './views/About';
 import Blog from './views/Blog';
@@ -26,6 +27,7 @@ function App() {
 			<Blog/>
 			<Partner/>
 			<Contact/>
+			<Footer/>
 		</div>
 	);
 }
