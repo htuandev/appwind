@@ -5,7 +5,7 @@ import {FaCheck} from 'react-icons/fa';
 export default function Pricing() {
 	return (
 		<section id='pricing'>
-			<div className=' box-screen mt-20'>
+			<div className=' box-screen pt-20'>
 				<Heading title={'Flexible Plans'} />
 				<div className=' grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 '>
 					{planList.map((p, i) => (

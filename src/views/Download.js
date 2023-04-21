@@ -3,7 +3,7 @@ import React from 'react';
 export default function Download() {
 	return (
 		<section id='download'>
-			<div className='box-screen'>
+			<div className='box-screen pt-20'>
 				<div className='box-gradient rounded-2xl'>
 					<div className=' box-screen pb-0'>
 						<div className='flex flex-wrap items-end md:justify-center lg:justify-start'>
