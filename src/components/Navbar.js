@@ -25,7 +25,13 @@ export default function Navbar() {
 		sub: false,
 	});
 
-	const switchDisplay = (id) => document.getElementById(id).scrollIntoView({behavior: 'smooth'});
+	const switchDisplay = (id) => {
+		document.getElementById(id).scrollIntoView({behavior: 'smooth'});
+		setIsDropdownOpen({
+			...isDropdownOpen,
+			bar: !isDropdownOpen.bar,
+		});
+	};
 
 	useEffect(() => {
 		window.onscroll = () => {
@@ -49,9 +55,9 @@ export default function Navbar() {
 					isTop ? `lg:py-8` : `lg:py-6`
 				}`}
 				onClick={() => {
-          if (id.trim() === "") return
-          switchDisplay(id)
-        }}
+					if (id.trim() === '') return;
+					switchDisplay(id);
+				}}
 			>
 				{name}
 			</span>
@@ -89,10 +95,11 @@ export default function Navbar() {
 								}`}
 							>
 								<ul className='lg:flex lg:justify-end'>
-									<Li name='Features' id='features'/>
-									<Li name='About' id='about'/>
-									<Li name='Pricing' id='pricing'/>
-									<Li name='Contact' id='contact'/>
+									<Li name='Features' id='features' />
+									<Li name='About' id='about' />
+									<Li name='Reviews' id='feedback' />
+									<Li name='Pricing' id='pricing' />
+									<Li name='Contact' id='contact' />
 									<li
 										className=' relative group text-grey'
 										onClick={() =>
@@ -128,7 +135,9 @@ export default function Navbar() {
 							</nav>
 						</div>
 						<div className=' hidden sm:flex justify-end pr-16 lg:pr-0 xl:pl-20'>
-							<div className='btn select-none' onClick={()=> switchDisplay('download')}>Download</div>
+							<div className='btn select-none' onClick={() => switchDisplay('download')}>
+								Download
+							</div>
 							<div className='flex justify-center items-center cursor-pointer rounded-full w-10 md:w-14 md:h-14 text-black dark:text-white'>
 								<BsSun className='hidden dark:block text-2xl' onClick={toggleDarkMode} />
 								<BsMoonStars className='dark:hidden block text-2xl' onClick={toggleDarkMode} />
