@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar';
 import About from './views/About';
 import Blog from './views/Blog';
+import Contact from './views/Contact';
 import Download from './views/Download';
 import FAQ from './views/FAQ';
 import Features from './views/Features';
@@ -24,6 +25,7 @@ function App() {
 			<FAQ/>
 			<Blog/>
 			<Partner/>
+			<Contact/>
 		</div>
 	);
 }
