@@ -12,7 +12,9 @@ export default function Navbar() {
 	useEffect(() => {
 		const root = window.document.documentElement;
 		darkMode === true && root.classList.add('dark');
+		darkMode === true && root.classList.remove('light');
 		darkMode === false && root.classList.remove('dark');
+		darkMode === false && root.classList.add('light');
 		localStorage.setItem('darkMode', darkMode);
 	}, [darkMode]);
 

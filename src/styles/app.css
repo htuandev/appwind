@@ -78,3 +78,31 @@ input[type=number] {
     transform: translate3d(0, 0, 0);
   }
 }
+
+.dark::-webkit-scrollbar {
+  width: 10px;
+}
+.dark::-webkit-scrollbar-track {
+  background: #424242; 
+}
+.dark::-webkit-scrollbar-thumb {
+  background: #686868; 
+  border-radius: 8px;
+}
+.dark::-webkit-scrollbar-thumb:hover {
+  background: #7e7e7e; 
+}
+
+.light::-webkit-scrollbar {
+  width: 10px;
+}
+.light::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+.light::-webkit-scrollbar-thumb {
+  background: #c1c1c1; 
+  border-radius: 8px;
+}
+.light::-webkit-scrollbar-thumb:hover {
+  background: #9f9f9f; 
+}
