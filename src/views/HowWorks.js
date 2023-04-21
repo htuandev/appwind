@@ -5,7 +5,7 @@ import Heading from '../components/Heading';
 export default function HowWorks() {
 	return (
 		<section id='how-work'>
-			<div className=' box-screen mt-24'>
+			<div className=' box-screen py-20'>
 				<Heading title={'How it Works?'} />
 				<div className='flex flex-wrap justify-center'>
 					<Box type={1} title='Download For Free' />
@@ -19,7 +19,7 @@ export default function HowWorks() {
 
 const Box = ({type, title}) => (
 	<div className=' text-center max-w-[300px] mb-12 mx-auto px-2'>
-		<div className='w-20 h-20 mx-auto rounded-3xl flex justify-center items-center text-primary hover:text-white text-4xl cursor-pointer bg-primary bg-opacity-5 hover:bg-opacity-100 mb-6'>
+		<div className='w-20 h-20 mx-auto rounded-3xl flex justify-center items-center text-primary transition-all hover:text-white text-4xl cursor-pointer bg-primary bg-opacity-5 hover:bg-opacity-100 mb-6'>
 			{type === 1 ? <FaDownload /> : type === 2 ? <FaUser /> : <FaGrinHearts />}
 		</div>
 		<h3 className=' text-main text-xl md:text-2xl font-bold mb-4'>{title}</h3>

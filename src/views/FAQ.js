@@ -6,21 +6,17 @@ export default function FAQ() {
 		<section id='faq' className='overflow-hidden'>
 			<div className='box-screen pt-20'>
 				<Heading title={'Frequently Asked Questions'} />
-				<div className=' flex flex-wrap'>
-					<div className=' px-4 w-full lg:w-1/2'>
-						<div className=' relative mb-12 lg:mb-0'>
-							<Box />
-							<div className=' absolute -z-10 bottom-4 -left-16'>
-								<LeftSVG />
-							</div>
+				<div className=' grid grid-cols-1 lg:grid-cols-2 gap-4'>
+					<div className=' relative mb-12 lg:mb-0'>
+						<Box />
+						<div className=' absolute -z-10 bottom-4 -left-16'>
+							<LeftSVG />
 						</div>
 					</div>
-					<div className=' px-4 w-full lg:w-1/2'>
-						<div className=' relative mb-12 lg:mb-0'>
-							<Box />
-                            <div className=' absolute -z-10 -top-12 -right-16'>
-								<RightSVG />
-							</div>
+					<div className=' relative mb-12 lg:mb-0'>
+						<Box />
+						<div className=' absolute -z-10 -top-12 -right-16'>
+							<RightSVG />
 						</div>
 					</div>
 				</div>

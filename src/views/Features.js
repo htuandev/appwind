@@ -5,7 +5,7 @@ import Heading from '../components/Heading';
 export default function Features() {
 	return (
 		<section id='features'>
-			<div className=' box-screen mt-28'>
+			<div className=' box-screen pt-20'>
 				<div className=' flex px-4 justify-center'>
 					<div className=' px-4'>
 						<div className=' text-center mx-auto mb-16 max-w-[510px]'>
@@ -13,7 +13,7 @@ export default function Features() {
 						</div>
 					</div>
 				</div>
-				<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-6 gap-x-4 px-4 mb-8'>
+				<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-6 gap-x-4 mb-8'>
 					<div className='flex flex-col justify-between rounded-3xl bg-white dark:bg-[#07102d] p-10 text-main shadow-[0_3px_100px_rgba(11,5,22,0.07)] sm:p-12 md:p-10 lg:p-12 xl:p-10 2xl:p-12'>
 						<div className='flex items-center mb-6'>
 							<div className='mr-3 text-white w-10 h-10 flex items-center justify-center bg-[#8b5cf6] rounded-full'>

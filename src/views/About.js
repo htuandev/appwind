@@ -4,12 +4,12 @@ import {FaArrowRight} from 'react-icons/fa';
 export default function About() {
 	return (
 		<section id='about'>
-		  <div className=' box-screen mt-24'>
-  			<div className=' grid md:grid-cols-2 gap-6 md:gap-y-32 items-center'>
-  				<div className=' px-4 order-1'>
+		  <div className=' box-screen pt-20'>
+  			<div className=' grid md:grid-cols-2 gap-6 md:gap-y-16 items-center'>
+  				<div className=' order-1'>
   					<img src='images/about-image-1.svg' alt='about-1' />
   				</div>
-  				<div className='px-4 flex order-2 md:justify-end'>
+  				<div className='flex order-2 md:justify-end'>
   					<div className='  max-w-[450px]'>
   						<span className=' text-primary font-bold mb-2'>About Application</span>
   						<h2 className='text-dark dark:text-white text-3xl sm:text-4xl font-khand font-bold mb-6'>
@@ -24,10 +24,10 @@ export default function About() {
   						</span>
   					</div>
   				</div>
-  				<div className=' px-4 order-3 mt-16 md:mt-0 md:order-4'>
+  				<div className=' order-3 mt-16 md:mt-0 md:order-4'>
   					<img src='images/about-image-2.svg' alt='about-1' />
   				</div>
-  				<div className='px-4 flex flex-col justify-center max-w-[450px] order-4 md:order-3'>
+  				<div className='flex flex-col justify-center max-w-[450px] order-4 md:order-3'>
   					<span className=' text-primary font-bold mb-2'>Easy to Manage Appwind</span>
   					<h2 className='text-dark dark:text-white text-3xl sm:text-4xl font-khand font-bold mb-6'>
   						Manage your online wallet with Appwind.

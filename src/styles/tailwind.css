@@ -8,7 +8,7 @@
   }
 
   .box-screen {
-    @apply w-full sm:max-w-[540px] md:max-w-[768px] lg:max-w-[992px] xl:max-w-[1140px] 2xl:max-w-[1320px] p-4 lg:p-8 m-auto;
+    @apply w-full sm:max-w-[540px] md:max-w-[768px] lg:max-w-[992px] xl:max-w-[1140px] 2xl:max-w-[1320px] p-4 md:p-8 m-auto;
   }
 
   .text-main {
