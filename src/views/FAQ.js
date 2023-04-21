@@ -1,19 +1,20 @@
 import React from 'react';
 import Heading from '../components/Heading';
+import {useWasViewed} from '../hooks/useWasViewed';
 
 export default function FAQ() {
 	return (
 		<section id='faq' className='overflow-hidden'>
 			<div className='box-screen pt-20'>
 				<Heading title={'Frequently Asked Questions'} />
-				<div className=' grid grid-cols-1 lg:grid-cols-2 gap-4'>
-					<div className=' relative mb-12 lg:mb-0'>
+				<div className=' grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-8'>
+					<div className=' relative '>
 						<Box />
 						<div className=' absolute -z-10 bottom-4 -left-16'>
 							<LeftSVG />
 						</div>
 					</div>
-					<div className=' relative mb-12 lg:mb-0'>
+					<div className=' relative '>
 						<Box />
 						<div className=' absolute -z-10 -top-12 -right-16'>
 							<RightSVG />
@@ -25,34 +26,42 @@ export default function FAQ() {
 	);
 }
 
-const Box = () => (
-	<div className='z-10 bg-white dark:bg-dark rounded-3xl border-[2px] overflow-hidden mb-12 relative px-8 py-10 sm:p-12 md:p-8 lg:p-5 xl:p-9 2xl:p-12 border-primary'>
-		<div className='mb-12'>
-			<span className=' mb-4 font-bold text-main text-lg sm:text-2xl lg:text-xl xl:text-2xl block'>
-				Which plan is suitable for me?
-			</span>
-			<span className='text-grey '>
-				Sed tempor mi at nunc commodo, quis tincidunt turpis finibus. Pellentesque congue neque justo.
-			</span>
+const Box = () => {
+	const {setRef, wasViewed} = useWasViewed();
+	const animation = wasViewed ? 'animate-fade-in-up delay-200' : null;
+
+	return (
+		<div className={animation} ref={setRef}>
+			<div className='z-10 bg-white dark:bg-dark rounded-3xl border-[2px] overflow-hidden relative px-8 py-10 sm:p-12 md:p-8 lg:p-5 xl:p-9 2xl:p-12 border-primary'>
+				<div className='mb-12'>
+					<span className=' mb-4 font-bold text-main text-lg sm:text-2xl lg:text-xl xl:text-2xl block'>
+						Which plan is suitable for me?
+					</span>
+					<span className='text-grey '>
+						Sed tempor mi at nunc commodo, quis tincidunt turpis finibus. Pellentesque congue neque justo.
+					</span>
+				</div>
+				<div className='mb-12'>
+					<span className=' mb-4 font-bold text-main text-lg sm:text-2xl lg:text-xl xl:text-2xl  block'>
+						Will I get free future updates?
+					</span>
+					<span className='text-grey '>
+						Maecenas tincidunt risus et interdum lobortis. Nunc nec eros mattis diam suscipit tristique at sit amet
+						elit.
+					</span>
+				</div>
+				<div>
+					<span className=' mb-4 font-bold text-main text-lg sm:text-2xl lg:text-xl xl:text-2xl block'>
+						Do you provide support?
+					</span>
+					<span className='text-grey '>
+						Maecenas tincidunt risus et interdum lobortis. Nunc nec eros mattis diam suscipit tristique.
+					</span>
+				</div>
+			</div>
 		</div>
-		<div className='mb-12'>
-			<span className=' mb-4 font-bold text-main text-lg sm:text-2xl lg:text-xl xl:text-2xl  block'>
-				Will I get free future updates?
-			</span>
-			<span className='text-grey '>
-				Maecenas tincidunt risus et interdum lobortis. Nunc nec eros mattis diam suscipit tristique at sit amet elit.
-			</span>
-		</div>
-		<div>
-			<span className=' mb-4 font-bold text-main text-lg sm:text-2xl lg:text-xl xl:text-2xl block'>
-				Do you provide support?
-			</span>
-			<span className='text-grey '>
-				Maecenas tincidunt risus et interdum lobortis. Nunc nec eros mattis diam suscipit tristique.
-			</span>
-		</div>
-	</div>
-);
+	);
+};
 
 const RightSVG = () => (
 	<svg width='170' height='183' viewBox='0 0 170 183' fill='none' xmlns='http://www.w3.org/2000/svg'>

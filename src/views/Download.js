@@ -1,11 +1,14 @@
 import React from 'react';
+import { useWasViewed } from '../hooks/useWasViewed';
 
 export default function Download() {
+	const {setRef, wasViewed} = useWasViewed();
+	const animation = wasViewed ? 'animate-fade-in-up delay-200' : null;
 	return (
 		<section id='download'>
 			<div className='box-screen pt-20'>
 				<div className='box-gradient rounded-2xl'>
-					<div className=' box-screen pb-0'>
+					<div className={animation} ref={setRef}>
 						<div className='flex flex-wrap items-end md:justify-center lg:justify-start'>
 							<div className=' lg:w-1/2 px-4'>
 								<div className='max-w-[400px] py-16'>

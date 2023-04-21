@@ -1,82 +1,87 @@
 import React from 'react';
 import {FaFacebookSquare, FaTwitterSquare, FaInstagram, FaLinkedin, FaPaperPlane} from 'react-icons/fa';
+import { useWasViewed } from '../hooks/useWasViewed';
 
 export default function Footer() {
+	const {setRef, wasViewed} = useWasViewed();
+	const animation = wasViewed ? 'animate-fade-in-up delay-300' : null;
 	return (
 		<footer>
-			<div className='bg-[#E4F2FE] dark:bg-[#07102D] py-12 relative z-10'>
-				<div className='box-screen'>
-					<div className='flex flex-wrap gap-y-6'>
-						<div className=' w-full px-4 md:w-1/2 lg:w-1/3'>
-							<div className='mb-12 max-w-[300px]'>
-								<a href='/' className='flex items-center mb-8'>
-									<img src='/images/logo-icon.png' alt='logo' className='w-12 h-12 mr-3' />
-									<span className='text-main text-2xl font-bold'>Appwind.</span>
-								</a>
-								<p className=' mb-8 text-grey'>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla feugiat et sem at Etiam in lobortis
-									dui. Praesent .
-								</p>
-								<div className=' flex items-center gap-4 text-grey text-xl '>
-									<FaFacebookSquare className=' cursor-pointer hover:text-primary' />
-									<FaTwitterSquare className=' cursor-pointer hover:text-primary' />
-									<FaInstagram className=' cursor-pointer hover:text-primary' />
-									<FaLinkedin className=' cursor-pointer hover:text-primary' />
+			<div className={animation} ref={setRef}>
+				<div className='bg-[#E4F2FE] dark:bg-[#07102D] py-12 relative z-10'>
+					<div className='box-screen'>
+						<div className='flex flex-wrap gap-y-6'>
+							<div className=' w-full px-4 md:w-1/2 lg:w-1/3'>
+								<div className='mb-12 max-w-[300px]'>
+									<a href='/' className='flex items-center mb-8'>
+										<img src='/images/logo-icon.png' alt='logo' className='w-12 h-12 mr-3' />
+										<span className='text-main text-2xl font-bold'>Appwind.</span>
+									</a>
+									<p className=' mb-8 text-grey'>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla feugiat et sem at Etiam in lobortis
+										dui. Praesent .
+									</p>
+									<div className=' flex items-center gap-4 text-grey text-xl '>
+										<FaFacebookSquare className=' cursor-pointer hover:text-primary' />
+										<FaTwitterSquare className=' cursor-pointer hover:text-primary' />
+										<FaInstagram className=' cursor-pointer hover:text-primary' />
+										<FaLinkedin className=' cursor-pointer hover:text-primary' />
+									</div>
 								</div>
 							</div>
-						</div>
-						<div className=' w-full px-4 sm:w-1/2 lg:w-1/6'>
-							<p className=' text-2xl font-khand font-bold text-main mb-9'>Quick Links</p>
-							<ul className=' text-grey list-none'>
-								<li>
-									<span className='mb-4 cursor-pointer hover:text-primary block'>Our Blog</span>
-								</li>
-								<li>
-									<span className='mb-4 cursor-pointer hover:text-primary block'>Check Pricing</span>
-								</li>
-								<li>
-									<span className='mb-4 cursor-pointer hover:text-primary block'>About Us</span>
-								</li>
-								<li>
-									<span className='mb-4 cursor-pointer hover:text-primary block'>Help & Support</span>
-								</li>
-							</ul>
-						</div>
-						<div className=' w-full px-4 sm:w-1/2 lg:w-1/4'>
-							<p className=' text-2xl font-khand font-bold text-main mb-9'>App Information</p>
-							<ul className=' text-grey list-none'>
-								<li>
-									<span className=' mb-4 cursor-pointer hover:text-primary block'>Style Guideline</span>
-								</li>
-								<li>
-									<span className='mb-4 cursor-pointer hover:text-primary block'>Getting Started</span>
-								</li>
-								<li>
-									<span className='mb-4 cursor-pointer hover:text-primary block'>Changelog</span>
-								</li>
-								<li>
-									<span className='mb-4 cursor-pointer hover:text-primary block'>Update Details</span>
-								</li>
-							</ul>
-						</div>
-						<div className=' w-full px-4 md:w-1/2 lg:w-1/4'>
-							<p className=' text-2xl font-khand font-bold text-main mb-9'>Join Our Newsletter</p>
-							<p className=' mb-8 text-grey'>Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla feugiat</p>
-							<form className=' relative'>
-								<input
-									type='email'
-									className='text-grey px-5 py-3 text-sm dark:bg-dark dark:border-dark outline-offset-2 outline-transparent outline outline-2 border border-[#e4f2fe] focus:border-primary rounded-lg w-full'
-									placeholder='Enter your email'
-								/>
-								<button className=' absolute top-1/2 right-0 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-lg bg-primary text-white'>
-									<FaPaperPlane className=' text-xl' />
-								</button>
-							</form>
+							<div className=' w-full px-4 sm:w-1/2 lg:w-1/6'>
+								<p className=' text-2xl font-khand font-bold text-main mb-9'>Quick Links</p>
+								<ul className=' text-grey list-none'>
+									<li>
+										<span className='mb-4 cursor-pointer hover:text-primary block'>Our Blog</span>
+									</li>
+									<li>
+										<span className='mb-4 cursor-pointer hover:text-primary block'>Check Pricing</span>
+									</li>
+									<li>
+										<span className='mb-4 cursor-pointer hover:text-primary block'>About Us</span>
+									</li>
+									<li>
+										<span className='mb-4 cursor-pointer hover:text-primary block'>Help & Support</span>
+									</li>
+								</ul>
+							</div>
+							<div className=' w-full px-4 sm:w-1/2 lg:w-1/4'>
+								<p className=' text-2xl font-khand font-bold text-main mb-9'>App Information</p>
+								<ul className=' text-grey list-none'>
+									<li>
+										<span className=' mb-4 cursor-pointer hover:text-primary block'>Style Guideline</span>
+									</li>
+									<li>
+										<span className='mb-4 cursor-pointer hover:text-primary block'>Getting Started</span>
+									</li>
+									<li>
+										<span className='mb-4 cursor-pointer hover:text-primary block'>Changelog</span>
+									</li>
+									<li>
+										<span className='mb-4 cursor-pointer hover:text-primary block'>Update Details</span>
+									</li>
+								</ul>
+							</div>
+							<div className=' w-full px-4 md:w-1/2 lg:w-1/4'>
+								<p className=' text-2xl font-khand font-bold text-main mb-9'>Join Our Newsletter</p>
+								<p className=' mb-8 text-grey'>Lorem ipsum dolor sit amet, consectetur adipiscing elit nulla feugiat</p>
+								<form className=' relative'>
+									<input
+										type='email'
+										className='text-grey px-5 py-3 text-sm dark:bg-dark dark:border-dark outline-offset-2 outline-transparent outline outline-2 border border-[#e4f2fe] focus:border-primary rounded-lg w-full'
+										placeholder='Enter your email'
+									/>
+									<button className=' absolute top-1/2 right-2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-lg bg-primary text-white'>
+										<FaPaperPlane className=' text-xl' />
+									</button>
+								</form>
+							</div>
 						</div>
 					</div>
+	                <div className=' absolute -z-10 bottom-0 left-0'><LeftSVG/></div>
+	                <div className=' absolute -z-10 right-0 top-0'><RightSVG/></div>
 				</div>
-                <div className=' absolute -z-10 bottom-0 left-0'><LeftSVG/></div>
-                <div className=' absolute -z-10 right-0 top-0'><RightSVG/></div>
 			</div>
 			<div className='p-4 bg-white dark:bg-dark'>
 				<p className=' text-center font-medium text-lg text-grey'>© 2023 Appwind - All rights reserved.</p>

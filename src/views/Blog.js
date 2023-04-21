@@ -1,6 +1,7 @@
 import React from 'react';
 import Heading from '../components/Heading';
 import {FaArrowRight} from 'react-icons/fa';
+import { useWasViewed } from '../hooks/useWasViewed';
 
 export default function Blog() {
 	return (
@@ -27,19 +28,28 @@ export default function Blog() {
 	);
 }
 
-const Box = ({src, height, title}) => (
-	<div className=' overflow-hidden rounded-xl relative'>
-		<img src={src} alt='blog' className='w-full h-full object-cover' />
-		<div
-			className={`absolute right-0 top-0 flex items-end w-full h-full bg-gradient-to-t from-[#07102d] to-transparent h-[${height}px]`}
-		>
-			<div className=' flex justify-between items-end p-8 w-full '>
-				<div className='max-w-[400px]'>
-					<p className=' mb-2 text-white font-bold font-khand text-2xl cursor-pointer hover:text-primary'>{title}</p>
-					<p className=' text-white text-base'>Continue reading...</p>
+const Box = ({src, height, title}) => {
+	const {setRef, wasViewed} = useWasViewed();
+	const animation = wasViewed ? 'animate-fade-in-up delay-200' : null;
+
+	return (
+		<div className={animation} ref={setRef}>
+			<div className=' overflow-hidden rounded-xl relative'>
+				<img src={src} alt='blog' className='w-full h-full object-cover' />
+				<div
+					className={`absolute right-0 top-0 flex items-end w-full h-full bg-gradient-to-t from-[#07102d] to-transparent h-[${height}px]`}
+				>
+					<div className=' flex justify-between items-end p-8 w-full '>
+						<div className='max-w-[400px]'>
+							<p className=' mb-2 text-white font-bold font-khand text-2xl cursor-pointer hover:text-primary'>
+								{title}
+							</p>
+							<p className=' text-white text-base'>Continue reading...</p>
+						</div>
+						<FaArrowRight className=' text-white hover:text-primary text-xl cursor-pointer min-w-[16px]' />
+					</div>
 				</div>
-				<FaArrowRight className=' text-white hover:text-primary text-xl cursor-pointer min-w-[16px]' />
 			</div>
 		</div>
-	</div>
-);
+	);
+};

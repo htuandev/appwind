@@ -1,14 +1,21 @@
 import React from 'react';
+import { useWasViewed } from '../hooks/useWasViewed';
 
 export default function Partner() {
+	const {setRef, wasViewed} = useWasViewed();
+	const animation = wasViewed ? 'animate-fade-in-up delay-300' : null;
 	return (
 		<div className='pt-20'>
-			<div className='md:w-full md:mx-auto md:px-8 md:max-w-[768px] lg:max-w-[992px] xl:max-w-[1140px] 2xl:max-w-[1320px]'>
-				<div className='bg-gradient-to-l from-[#e4f2fe] to-[#ffeefe] p-8 sm:px-10 md:rounded-xl md:px-12 xl:py-12 xl:px-14 2xl:p-16'>
-					<div className=' flex flex-wrap justify-center items-center'>
-						{partners.map((p, i) => (
-							<Logo info={p} key={i} />
-						))}
+			<div className={animation} ref={setRef}>
+				<div className='md:w-full md:mx-auto md:px-8 md:max-w-[768px] lg:max-w-[992px] xl:max-w-[1140px] 2xl:max-w-[1320px]'>
+					<div className='bg-gradient-to-l from-[#e4f2fe] to-[#ffeefe] p-8 sm:px-10 md:rounded-xl md:px-12 xl:py-12 xl:px-14 2xl:p-16'>
+						
+							<div className=' flex flex-wrap justify-center items-center'>
+								{partners.map((p, i) => (
+									<Logo info={p} key={i} />
+								))}
+							</div>
+						
 					</div>
 				</div>
 			</div>

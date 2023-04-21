@@ -1,5 +1,6 @@
 import React from 'react';
 import Heading from '../components/Heading';
+import { useWasViewed } from '../hooks/useWasViewed';
 
 export default function Feedback() {
 	return (
@@ -53,8 +54,12 @@ const reviewers = [
 
 const Box = ({reviewer}) => {
 	const {reviewer_name: name, job_title: job, avatar} = reviewer;
+
+	const {setRef, wasViewed} = useWasViewed();
+	const animation = wasViewed ? 'animate-fade-in-up delay-200' : null;
+
 	return (
-		<div className='p-2  w-full md:w-1/2 lg:w-1/3'>
+		<div className={`p-2 w-full md:w-1/2 lg:w-1/3 ${animation}`} ref={setRef}>
 			<div className=' overflow-hidden relative z-10 rounded-2xl rounded-tl-none cursor-pointer bg-white dark:bg-dark p-10 shadow-[0px_5px_50px_rgba(178,152,236,0.05)] dark:hover:bg-primary dark:hover:bg-opacity-30 hover:bg-primary hover:bg-opacity-20 select-none transition-all'>
 				<p className=' mb-10 text-main font-bold'>
 					Lorem ipsum dolor sit amet, consect adipiscing elit. Pellentesque dignissim nisi a odio laoreet luctus. Ut sed

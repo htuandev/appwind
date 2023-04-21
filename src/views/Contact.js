@@ -1,19 +1,24 @@
 import React from 'react';
 import Heading from '../components/Heading';
+import { useWasViewed } from '../hooks/useWasViewed';
 
 export default function Contact() {
+	const {setRef, wasViewed} = useWasViewed();
+	const animation = wasViewed ? 'animate-fade-in-up delay-300' : null;
 	return (
 		<section id='contact' className=' overflow-hidden'>
 			<div className=' box-screen py-20'>
 				<Heading title={'Need Any Help?'} />
-				<div className='max-w-[770px] relative rounded-2xl bg-white dark:bg-[#07102D] mx-auto border border-[#e4f2fe] dark:border-dark py-10 px-8 md:p-16'>
-					<div className=' absolute bottom-8 -left-14 -z-10'>
-						<LeftSVG />
+				<div className={animation} ref={setRef}>
+					<div className='max-w-[770px] relative rounded-2xl bg-white dark:bg-[#07102D] mx-auto border border-[#e4f2fe] dark:border-dark py-10 px-8 md:p-16'>
+						<div className=' absolute bottom-8 -left-14 -z-10'>
+							<LeftSVG />
+						</div>
+						<Form />
+	                    <div className=' absolute -z-10 -top-8 -right-14'>
+	                        <RightSVG/>
+	                    </div>
 					</div>
-					<Form />
-                    <div className=' absolute -z-10 -top-8 -right-14'>
-                        <RightSVG/>
-                    </div>
 				</div>
 			</div>
 		</section>
