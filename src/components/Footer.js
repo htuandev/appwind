@@ -1,6 +1,6 @@
 import React from 'react';
 import {FaFacebookSquare, FaTwitterSquare, FaInstagram, FaLinkedin, FaPaperPlane} from 'react-icons/fa';
-import { useWasViewed } from '../hooks/useWasViewed';
+import {useWasViewed} from '../hooks/useWasViewed';
 
 export default function Footer() {
 	const {setRef, wasViewed} = useWasViewed();
@@ -79,12 +79,21 @@ export default function Footer() {
 							</div>
 						</div>
 					</div>
-	                <div className=' absolute -z-10 bottom-0 left-0'><LeftSVG/></div>
-	                <div className=' absolute -z-10 right-0 top-0'><RightSVG/></div>
+					<div className=' absolute -z-10 bottom-0 left-0'>
+						<LeftSVG />
+					</div>
+					<div className=' absolute -z-10 right-0 top-0'>
+						<RightSVG />
+					</div>
 				</div>
 			</div>
 			<div className='p-4 bg-white dark:bg-dark'>
-				<p className=' text-center font-medium text-lg text-grey'>© 2023 Appwind - All rights reserved.</p>
+				<div className='flex items-center gap-2 justify-center'>
+					<a href='https://tuanhngf.dev/' target='_blank' rel='noopener noreferrer'>
+						<img src='/logo100.png' alt='tuanhngf.dev' className='w-8' />
+					</a>
+					<p className='text-grey'>2023 © Appwind. All rights reserved.</p>
+				</div>
 			</div>
 		</footer>
 	);
